@@ -1,19 +1,3 @@
-locals {
-  subnet_ids = [
-    var.public_subnet_id_1a,
-    var.public_subnet_id_1b,
-    var.private_subnet_id_1a,
-    var.private_subnet_id_1b
-  ]
-}
-
-locals {
-  subnet_id = [
-    var.private_subnet_id_1a,
-    var.private_subnet_id_1b
-  ]
-}
-
 resource "aws_iam_role" "demo-eks-cluster-role-name" {
     name = var.demo-eks-cluster-role-name
     assume_role_policy = jsonencode({

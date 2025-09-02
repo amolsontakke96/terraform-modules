@@ -1,18 +1,18 @@
-# locals {
-#     subnet_id = [
-#         module.vpc.public_subnet_id_1a,
-#         module.vpc.public_subnet_id_1b,
-#         module.vpc.private_subnet_id_1a,
-#         module.vpc.private_subnet_id_1b
-#     ]
-# }
+locals {
+  subnet_ids = [
+    var.public_subnet_id_1a,
+    var.public_subnet_id_1b,
+    var.private_subnet_id_1a,
+    var.private_subnet_id_1b
+  ]
+}
 
-# locals {
-#   subnet_ids = [
-#     module.vpc.private_subnet_id_1a,
-#     module.vpc.private_subnet_id_1b
-#   ]
-# }
+locals {
+  subnet_id = [
+    var.private_subnet_id_1a,
+    var.private_subnet_id_1b
+  ]
+}
 
 variable "demo-eks-cluster-role-name" {
     description = "value for eks cluster role name"
